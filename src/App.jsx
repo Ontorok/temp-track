@@ -1,16 +1,19 @@
 import Header from "./components/header/Header";
 import WeatherBoard from "./components/weather/WeatherBoard";
+import FavouriteProvider from "./provider/FavouriteProvider";
 import WeatherProvider from "./provider/WeatherProvider";
 
 function App() {
   return (
     <WeatherProvider>
-      <Header />
-      <main>
-        <section className="">
-          <WeatherBoard />
-        </section>
-      </main>
+      <FavouriteProvider>
+        <Header />
+        <main>
+          <section className="">
+            <WeatherBoard />
+          </section>
+        </main>
+      </FavouriteProvider>
     </WeatherProvider>
   );
 }
