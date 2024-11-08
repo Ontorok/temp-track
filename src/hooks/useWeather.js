@@ -3,6 +3,7 @@ import { WEATHER_API } from "../constants/apiUrls";
 const initialWeatherState = {
   location: "",
   climate: "",
+  climateDescription: "",
   temperature: "",
   maxTemperature: "",
   minTemperature: "",
@@ -41,6 +42,7 @@ export default function useWeather() {
         ...weather,
         location: data.name,
         climate: data.weather[0].main,
+        climateDescription: data.weather[0].description,
         temperature: Math.round(data.main.temp),
         maxTemperature: Math.round(data.main.temp_max),
         minTemperature: Math.round(data.main.temp_min),

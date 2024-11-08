@@ -3,19 +3,7 @@ import { getFormattedDate, getWeatherIcon } from "../../utility";
 
 const WeatherHeadline = () => {
   const { weather } = useWeatherContext();
-  const {
-    location,
-    climate,
-    temperature,
-    maxTemperature,
-    minTemperature,
-    humidity,
-    cloudPercentage,
-    wind,
-    time,
-    latitude,
-    longitude,
-  } = weather;
+  const { location, climate, temperature, time } = weather;
 
   return (
     <div>
