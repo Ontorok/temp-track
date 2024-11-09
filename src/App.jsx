@@ -1,20 +1,17 @@
-import Header from "./components/header/Header";
-import WeatherBoard from "./components/weather/WeatherBoard";
+import HomePage from "./pages/HomePage";
 import FavouriteProvider from "./provider/FavouriteProvider";
+import LocationProvider from "./provider/LocationProvider";
 import WeatherProvider from "./provider/WeatherProvider";
 
 function App() {
   return (
-    <WeatherProvider>
-      <FavouriteProvider>
-        <Header />
-        <main>
-          <section className="">
-            <WeatherBoard />
-          </section>
-        </main>
-      </FavouriteProvider>
-    </WeatherProvider>
+    <LocationProvider>
+      <WeatherProvider>
+        <FavouriteProvider>
+          <HomePage />
+        </FavouriteProvider>
+      </WeatherProvider>
+    </LocationProvider>
   );
 }
 
