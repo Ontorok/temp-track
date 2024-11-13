@@ -1,5 +1,11 @@
 import { useWeatherContext } from "../../hooks";
 
+import CloudyIcon from "../../assets/icons/cloud.svg";
+import HumidityIcon from "../../assets/icons/humidity.svg";
+import TempMaxIcon from "../../assets/icons/temp-max.svg";
+import TempMinIcon from "../../assets/icons/temp-min.svg";
+import WindIcon from "../../assets/icons/wind.svg";
+
 const WeatherCondition = () => {
   const { weather } = useWeatherContext();
   const {
@@ -20,35 +26,35 @@ const WeatherCondition = () => {
           <span>Temp max</span>
           <div className="inline-flex space-x-4">
             <p>{maxTemperature}°</p>
-            <img src="./assets/icons/temp-max.svg" alt="temp-max" />
+            <img src={TempMaxIcon} alt="temp-max" />
           </div>
         </li>
         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
           <span>Temp min</span>
           <div className="inline-flex space-x-4">
             <p>{minTemperature}°</p>
-            <img src="./assets/icons/temp-min.svg" alt="temp-min" />
+            <img src={TempMinIcon} alt="temp-min" />
           </div>
         </li>
         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
           <span>Humidity</span>
           <div className="inline-flex space-x-4">
             <p>{humidity}%</p>
-            <img src="./assets/icons/humidity.svg" alt="humidity" />
+            <img src={HumidityIcon} alt="humidity" />
           </div>
         </li>
         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
           <span>Cloudy</span>
           <div className="inline-flex space-x-4">
             <p>{cloudPercentage}%</p>
-            <img src="./assets/icons/cloud.svg" alt="cloudy" />
+            <img src={CloudyIcon} alt="cloudy" />
           </div>
         </li>
         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
           <span>Wind</span>
           <div className="inline-flex space-x-4">
             <p>{wind}km/h</p>
-            <img src="./assets/icons/wind.svg" alt="wind" />
+            <img src={WindIcon} alt="wind" />
           </div>
         </li>
       </ul>

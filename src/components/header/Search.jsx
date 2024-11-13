@@ -1,10 +1,11 @@
 import { useState } from "react";
+import SearchIcon from "../../assets/search.svg";
 import { getLocationByName } from "../../data/location-data";
 import { useLocationContext } from "../../hooks";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { selectedLocation, setSelectedLocation } = useLocationContext();
+  const { setSelectedLocation } = useLocationContext();
 
   const handleSearchTermChange = (e) => {
     setSearchTerm(e.target.value);
@@ -28,7 +29,7 @@ const Search = () => {
           onChange={handleSearchTermChange}
         />
         <button type="submit">
-          <img src="./assets/search.svg" />
+          <img src={SearchIcon} />
         </button>
       </div>
     </form>

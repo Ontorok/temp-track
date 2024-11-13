@@ -1,3 +1,19 @@
+import CloudIcon from "../assets/cloud.svg";
+import HazeIcon from "../assets/haze.svg";
+import SnowIcon from "../assets/icons/snow.svg";
+import SunnyIcon from "../assets/icons/sunny.svg";
+import RainyIcon from "../assets/rainy.svg";
+import ThunderIcon from "../assets/thunder.svg";
+
+import ClearBg from "../assets/backgrounds/clear-sky.jpg";
+import HazeBg from "../assets/backgrounds/few-clouds.jpg";
+import MistBg from "../assets/backgrounds/mist.jpeg";
+import RainBg from "../assets/backgrounds/rainy-day.jpg";
+import CloudsBg from "../assets/backgrounds/scattered-clouds.jpg";
+import SnowBg from "../assets/backgrounds/sunny.jpg";
+import ThunderBg from "../assets/backgrounds/thunderstorm.jpg";
+import FogBg from "../assets/backgrounds/winter.jpg";
+
 function getFormattedDate(value, type, inMilliSecond) {
   if (!type) return value;
 
@@ -28,22 +44,45 @@ function getFormattedDate(value, type, inMilliSecond) {
 function getWeatherIcon(climate) {
   switch (climate) {
     case "Rain":
-      return "./assets/rainy.svg";
+      return RainyIcon;
     case "Clouds":
-      return "./assets/cloud.svg";
+      return CloudIcon;
     case "Clear":
-      return "./assets/icons/sunny.svg";
+      return SunnyIcon;
     case "Snow":
-      return "./assets/icons/snow.svg";
+      return SnowIcon;
     case "Thunder":
-      return "./assets/thunder.svg";
+      return ThunderIcon;
     case "Fog":
     case "Haze":
     case "Mist":
-      return "./assets/haze.svg";
+      return HazeIcon;
     default:
-      return "./assets/icons/sunny.svg";
+      return SunnyIcon;
   }
 }
 
-export { getFormattedDate, getWeatherIcon };
+function getWeatherBackground(climate) {
+  switch (climate) {
+    case "Rain":
+      return RainBg;
+    case "Clouds":
+      return CloudsBg;
+    case "Clear":
+      return ClearBg;
+    case "Snow":
+      return SnowBg;
+    case "Thunder":
+      return ThunderBg;
+    case "Fog":
+      return FogBg;
+    case "Haze":
+      return HazeBg;
+    case "Mist":
+      return MistBg;
+    default:
+      return ClearBg;
+  }
+}
+
+export { getFormattedDate, getWeatherBackground, getWeatherIcon };
