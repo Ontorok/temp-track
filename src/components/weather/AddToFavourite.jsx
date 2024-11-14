@@ -1,7 +1,7 @@
 import { useFavouriteContext, useWeatherContext } from "../../hooks";
 
-const regularHeartIcon = "./assets/heart.svg";
-const redHeartIcon = "./assets/heart-red.svg";
+import RedHeartIcon from "../../assets/heart-red.svg";
+import HeartIcon from "../../assets/heart.svg";
 
 const AddToFavourite = () => {
   const { favourites, addToFavourites, removeFromFavourites } =
@@ -29,7 +29,7 @@ const AddToFavourite = () => {
           onClick={handleFavourite}
         >
           <span>Add to Favourite</span>
-          <img src={isInFavourites ? redHeartIcon : regularHeartIcon} alt="" />
+          <img src={isInFavourites ? RedHeartIcon : HeartIcon} alt="" />
         </button>
       </div>
     </div>
